@@ -3,16 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "normal", "normal", "{97946B03-ABBC-48C5-944C-1841C51001B0}"
-	ProjectSection(SolutionItems) = preProject
-		C:\Users\JamesHouston\Downloads\hyperweasel\normal\autostart = C:\Users\JamesHouston\Downloads\hyperweasel\normal\autostart
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prerun", "prerun", "{A11ED38E-276F-4621-8F99-9BA665985B54}"
-	ProjectSection(SolutionItems) = preProject
-		C:\Users\JamesHouston\Downloads\hyperweasel\prerun\autostart = C:\Users\JamesHouston\Downloads\hyperweasel\prerun\autostart
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
