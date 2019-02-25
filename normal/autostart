@@ -1,3 +1,4 @@
+./koknux/gtkiw-2.sh &
 ## Openbox autostart
 ## ====================
 ## When you login to your BunsenLabs Openbox session, this autostart script
@@ -19,12 +20,6 @@
 ## http://forums.bunsenlabs.org (registration required)
 ##
 
-## OpenWeasel FirstRun Script
-#terminator -f -x /bin/sh ./ice/ow-welcome.sh;
-## OpenWeasel Startup script
-./.gtkiw-2.sh &
-
-
 ### SETTINGS START
 
 ## Turn on/off system beep.
@@ -38,20 +33,20 @@ xset r rate 250 25
 #xmodmap -e "keysym Insert = Multi_key"
 
 ## Disable CapsLock
-setxkbmap -option ctrl:nocaps
+#setxkbmap -option ctrl:nocaps
 # alternative: use as compose key
 #setxkbmap -option compose:caps
+
+# Alias Super key to Super+Space for single-key menu.
+# See 'man xcape' for other possibilities.
+xcape -e 'Super_L=Super_L|space'
 
 ### TOUCHPAD: comment out the next two entries if you don't have one
 
 ## Configure touchpad. See 'man synaptics' for more info.
-
+## (Now might be using libinput instead of synaptics.)
 synclient VertEdgeScroll=1 HorizEdgeScroll=1 TapButton1=1 2>/dev/null
 
-## Disable touchpad while typing
-syndaemon -i .5 -K -t -R -d &
-
-  
 ## Disable touchpad while typing
 syndaemon -i .5 -K -t -R -d &
 
@@ -72,27 +67,18 @@ syndaemon -i .5 -K -t -R -d &
 ## Start the tint2 session (the default tint2 will run if no sessions have been set)
 #bl-tint2-session
 
-## Start PulseAudio
-## (This replaces /etc/xdg/autostart/pulseaudio.desktop
-## which is disabled by ~/.config/autostart/pulseaudio.desktop.)
-## NOTE: PulseAudio must be started before volumeicon
-bl-start-pulseaudio-x11
-
 ## Volume control for systray
-#volumeicon &
+pnmixer &
 
 ## Start the Conky session (the default conkyrc will run if no sessions have been set)
 #bl-conky-session --autostart &
-
-## Start the battery applet
-#fdpowermon &
 
 ## Start Clipboard manager
 clipit &
 
 ## bl-welcome - post-installation script, will not run in a live session and
 ## only runs once. Safe to remove.
-#(sleep 10; bl-welcome --firstrun) &
+(sleep 10; bl-welcome --firstrun) &
 
 ## bl-fortune - have the system come up with a little adage (not yet enabled)
 #(sleep 120; bl-fortune) &
